@@ -605,6 +605,7 @@ MACRO {nedf} {"Nucl. Eng. \& Design/Fusion"}
 MACRO {nf} {"Nucl. Fusion"}
 
 MACRO {nim} {"Nucl. Inst. \& Meth."}
+MACRO {nima} {"Nucl. Inst. \& Meth. A"}
 
 MACRO {nimpr} {"Nucl. Inst. \& Meth. in Phys. Res."}
 
