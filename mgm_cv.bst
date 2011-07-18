@@ -1377,7 +1377,7 @@ FUNCTION {make.full.names}
 
 FUNCTION {output.bibitem}
 { newline$
-  "\noindent\years{" write$
+  "\years{" write$
   year write$
   "}" write$
   newline$
