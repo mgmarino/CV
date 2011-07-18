@@ -2554,16 +2554,16 @@ FUNCTION {begin.bib}
   write$ newline$
   "  \def\citenamefont#1{#1}\fi"
   write$ newline$
-  "\expandafter\ifx\csname url\endcsname\relax"
-  write$ newline$
-  "  \def\url#1{\texttt{#1}}\fi"
-  write$ newline$
-  "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
-  write$ newline$
+%%"\expandafter\ifx\csname url\endcsname\relax"
+%%write$ newline$
+%%"  \def\url#1{\texttt{#1}}\fi"
+%%write$ newline$
+%%"\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
+%%write$ newline$
   "\providecommand{\bibinfo}[2]{#2}"
   write$ newline$
-  "\providecommand{\eprint}[2][]{\url{#2}}"
-  write$ newline$
+%%"\providecommand{\eprint}[2][]{\url{#2}}"
+%%write$ newline$
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}
