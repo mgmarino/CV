@@ -1,0 +1,13 @@
+CV - Curriculum Vitae - Michael Gregory Marino
+
+Needs to be typeset on a Mac using XeLaTex (for font reasons):
+
+xelatex cv_mgm
+bibtex cv_mgm
+xelatex cv_mgm
+xelatex cv_mgm
+
+"LICENSE":
+You are free to use the formatting of this CV, as is.  Please just include any
+notes/comments/etc. in the bst files. 
+
