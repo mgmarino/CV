@@ -2562,8 +2562,8 @@ FUNCTION {begin.bib}
 %%write$ newline$
   "\providecommand{\bibinfo}[2]{#2}"
   write$ newline$
-%%"\providecommand{\eprint}[2][]{\url{#2}}"
-%%write$ newline$
+"\providecommand{\eprint}[1]{\href{http://arxiv.org/abs/#1}{arXiv:#1}}"
+write$ newline$
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}
