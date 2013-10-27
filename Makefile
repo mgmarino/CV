@@ -3,7 +3,7 @@
 # M. Marino
 LATEX := xelatex
 BIBTEX := bibtex
-ROOTNAME := cv_mgm 
+ROOTNAME := cv_mgm cv_publication_list  
 AUX_FILE := $(addsuffix .aux, $(ROOTNAME))
 TEX_FILE := $(addsuffix .tex, $(ROOTNAME))
 BBL_FILE := $(addsuffix .bbl, $(ROOTNAME))

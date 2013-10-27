@@ -1,0 +1,96 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+%------------------------------------
+
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+%\geometry{textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+% Europe
+\geometry{textwidth=14cm, textheight=22cm, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+\usepackage{enumitem}
+\usepackage{datetime} 
+\newdateformat{usvardate}{%
+\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
+% FONTS
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
+\setmonofont[Scale=0.8]{Monaco} 
+\setsansfont[Scale=0.9]{Optima Regular} 
+%\setsansfont[Scale=0.9]{Optima} 
+
+% ---- CUSTOM COMANDS
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}}
+% ---- MARGIN YEARS
+\newcommand{\virginyears}[1]{\marginpar{\scriptsize #1}}
+\newcommand{\years}[1]{\noindent\virginyears{#1}}
+\newcommand{\MJ}      {{\sc{Majo\-ra\-na}}}
+\newcommand{\TUM}      {Technische Universit\"{a}t M\"{u}nchen}
+\def\minmod{{\sc Demonstrator}}
+\newcommand{\cpp}{C\protect\raisebox{.25ex}{++}\ }
+\newenvironment{packed_enum}{
+\begin{itemize}[topsep=0pt]
+  \renewcommand{\labelitemi}{$\cdot$}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+% ---- END CUSTOM COMANDS
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\sffamily\mdseries\scshape\large\sectionrule{0pt}{0pt}{-0.5ex}{0.5pt}} 
+%\sectionfont{\sffamily\mdseries\large\sectionrule{0pt}{0pt}{-0.5ex}{0.5pt}} 
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[unicode, bookmarks, pdfencoding=auto, colorlinks, breaklinks, pdftitle={Michael Marino - vita},pdfauthor={Michael Marino}]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue} 
+
+% DOCUMENT
+\begin{document}
+
+%Add some length after paragraphs to improve readability
+\setlength{\parskip}{1ex}
+
+%
+% Add the following command to grab *everything* from the bib database
+\nocite{*}
+%
+
+\reversemarginpar
+\textsf{\LARGE Michael G.~Marino}\\[1cm]
+Excellence Cluster `Universe'\\
+Physik-Department\\
+\TUM\\
+Boltzmannstr. 2\\
+80805 Munich\\
+Germany\\[.2cm]
+Phone: \texttt{+49 89 35831 7149}\\
+Mobile: \texttt{+49 176 6683 0986}\\[.2cm]
+\def\myemail{michael.marino@mytum.de}
+email: \href{mailto:\myemail}{\myemail}\\
+%\vfill
+
+\subsection*{Journal articles}
+% Journal articles, parse everything from bib database and order correctly
+\bibliographystyle{mgm_cv}
+\bibliography{cv_publication_list}
+
+\end{document}
