@@ -1097,9 +1097,21 @@ FUNCTION {format.eprint}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { "\urlprefix\url{" url * "}" * }
+    { "\url{" url * "}" * }
   if$
 }
+
+FUNCTION {add.url}
+{ duplicate$ empty$
+    { skip$ }
+    { doi empty$
+        {}
+        {"\href{http://dx.doi.org/" url * "}{" * swap$ * "}" *}
+      if$
+    }
+  if$
+}
+
 
 FUNCTION {add.doi}
 { duplicate$ empty$
@@ -2064,13 +2076,13 @@ FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  format.title "title" output.check
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
   format.date "year" output.check
-  format.note output
-  format.eprint output
   format.url output
+  format.note output
   fin.entry
 }
 
